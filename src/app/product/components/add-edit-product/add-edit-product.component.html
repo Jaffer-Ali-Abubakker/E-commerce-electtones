@@ -2,7 +2,7 @@
 <div class="form-container">
     <h2 *ngIf="!editStatus">Add Product</h2>
     <h2 *ngIf="editStatus">Edit Product</h2>
-    <form [formGroup]="productForm" class="example-form">
+    <form [formGroup]="productForm" class="example-form" >
         <mat-form-field class="example-full-width">
             <input matInput placeholder="Product Name" formControlName="name" >
         </mat-form-field>

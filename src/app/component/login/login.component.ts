@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     of(this.loginService.loginValidation(formValue)).pipe(map((loginStatus: boolean) => {
       if (loginStatus) {
         this.snackBar.open('Login Success', 'Woww!!!', { duration: 3000 })
-        this.router.navigate(['home/dashboard'])
+        this.router?.navigate(['dashboard'])
       } else {
         this.snackBar.open('Login Failed', 'Sorry!!!', { duration: 3000 })
       }

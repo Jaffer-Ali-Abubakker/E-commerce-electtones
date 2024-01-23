@@ -10,14 +10,11 @@ import { AddEditProductComponent } from './components/add-edit-product/add-edit-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddToCardComponent } from './components/view-product/view-product.component';
 import { CartComponent } from './components/cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
 const routes: Routes = [
-	{
-		path: '',
-		component: HomeComponent,
-	},
   {
     path: 'view-product/:id',
     component: AddToCardComponent,
@@ -39,8 +36,8 @@ const routes: Routes = [
     CartComponent
   ],
   imports: [
-    CommonModule,
     ReactiveFormsModule,
+    HttpClientModule,
 		FormsModule,
     ngMaterialModule,
     RouterModule.forChild(routes)

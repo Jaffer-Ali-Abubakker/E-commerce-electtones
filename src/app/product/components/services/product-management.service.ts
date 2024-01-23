@@ -4,6 +4,7 @@ import { productList } from './productType';
 import { productslist } from './sample-product';
 import * as UUID from 'uuid';
 import { ParamMap } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class ProductService {
   productSubject: BehaviorSubject<productList[]> = new BehaviorSubject<productList[]>([]);
   productInCard?: productList[] = [];
 
-  constructor() {
+  constructor(private http:HttpClient) {
     localStorage.setItem('products', JSON.stringify(productslist));
   }
 
@@ -77,4 +78,5 @@ export class ProductService {
     this.productInCard?.push(product)
     return true;
   }
+
 }

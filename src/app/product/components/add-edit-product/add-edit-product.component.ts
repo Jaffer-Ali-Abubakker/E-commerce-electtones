@@ -16,6 +16,7 @@ export class AddEditProductComponent implements OnInit {
   productForm!: UntypedFormGroup;
   productService = inject(ProductService)
   editStatus?: boolean;
+  selectedFile!: File;
 
 
   constructor(
@@ -73,4 +74,5 @@ export class AddEditProductComponent implements OnInit {
         }
       })).subscribe()
   }
+
 }

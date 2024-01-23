@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
+import { HomeComponent } from './product/components/home/home.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: LoginComponent,
-    children:[
-      {
-        path:'dashboard',
-				loadChildren: () => import('./product/product.module').then(m => m.ProductModule),
-      }
-    ]
-  }
+  },
+  {
+    path:'dashboard',
+    component: HomeComponent
+  },
+ 
 ];
 
 @NgModule({
