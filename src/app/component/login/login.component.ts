@@ -4,6 +4,7 @@ import { LoginService } from '../login.service';
 import { loginClass } from '../login-class';
 import { map, of } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginComponent implements OnInit {
   loginForm!: UntypedFormGroup;
 
-  constructor(private formBuilder: UntypedFormBuilder, private loginService: LoginService, private snackBar: MatSnackBar) { }
+  constructor(private formBuilder: UntypedFormBuilder,
+    private loginService: LoginService,
+    private snackBar: MatSnackBar,
+    private router: Router) { }
 
   ngOnInit() {
     this.loginFormBuild()
@@ -31,8 +35,10 @@ export class LoginComponent implements OnInit {
     of(this.loginService.loginValidation(formValue)).pipe(map((loginStatus: boolean) => {
       if (loginStatus) {
         this.snackBar.open('Login Success', 'Woww!!!', { duration: 3000 })
+        this.router.navigate(['home/dashboard'])
+      } else {
+        this.snackBar.open('Login Failed', 'Sorry!!!', { duration: 3000 })
       }
-      this.snackBar.open('Login Failed', 'Sorry!!!', { duration: 3000 })
     })).subscribe()
   }
 }

@@ -1,0 +1,25 @@
+<!-- product-form.component.html -->
+<div class="form-container">
+    <h2 *ngIf="!editStatus">Add Product</h2>
+    <h2 *ngIf="editStatus">Edit Product</h2>
+    <form [formGroup]="productForm" class="example-form">
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Product Name" formControlName="name" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Category" formControlName="category" >
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Description" formControlName="description" ></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Price" type="number" formControlName="price" >
+        </mat-form-field>
+
+        <button *ngIf="!editStatus" mat-raised-button color="primary" (click)="add()">Add Product</button>
+        <button *ngIf="editStatus" mat-raised-button color="primary" (click)="edit()">Edit Product</button>
+    </form>
+</div>

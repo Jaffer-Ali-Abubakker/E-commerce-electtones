@@ -1,0 +1,29 @@
+<!-- cart.component.html -->
+<app-header></app-header>
+<div class="cart-container">
+    <mat-card class="cart-card" *ngFor="let product of products">
+      <mat-card-header>
+        <div mat-card-avatar class="cart-avatar"></div>
+        <mat-card-title>{{product.name}}</mat-card-title>
+        <mat-card-subtitle>Total price: ${{productPrice()}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{product.description}}</p>
+        <div class="count-section">
+            <button mat-icon-button (click)="decrementCount()">
+              <mat-icon>remove</mat-icon>
+            </button>
+            <button mat-mini-fab disabled aria-label="Example mini fab with a heart icon">
+                <span> {{count()}} </span>
+              </button>
+            <button mat-icon-button  (click)="incrementCount()">
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+      </mat-card-content>
+        <mat-card-actions>
+            <button mat-fab extended color="primary">Check Out</button>
+        </mat-card-actions>
+    </mat-card>
+  </div>
+  

@@ -1,0 +1,19 @@
+<div class="card-container">
+    <mat-card *ngFor="let product of products">
+      <mat-card-header>
+        <div mat-card-avatar class="card-avatar"></div>
+        <mat-card-title>{{ product.name }}</mat-card-title>
+        <mat-card-subtitle>{{ product.category }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <h5>{{ product.description }}</h5>  
+        <h2>Price: ${{ product.price }}</h2>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="editProduct(product)">Edit</button>
+        <button mat-mini-fab color="warn" (click)="deleteProduct(product)"><mat-icon>delete</mat-icon></button>
+        <button mat-raised-button color="accent" (click)="viewProduct(product)">Add to Cart</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>

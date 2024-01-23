@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ngMaterialModule } from './ng-material.module';
 import { LoginComponent } from './component/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductModule } from './product/product.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
 		FormsModule,
-    ngMaterialModule
+    ProductModule,
+    ngMaterialModule,
   ],
   providers: [],
   bootstrap:[AppComponent]
 })
-export class AppModule { }
+export class AppModule { } 
