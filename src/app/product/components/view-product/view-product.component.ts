@@ -1,4 +1,4 @@
-import { Component, NgIterable, OnInit, Signal, WritableSignal, inject, signal } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, of, switchMap } from 'rxjs';
 import { ProductService } from '../services/product-management.service';
