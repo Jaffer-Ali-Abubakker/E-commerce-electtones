@@ -16,7 +16,6 @@ export class LoginService {
   loginValidation(loginFormValue:loginClass){
     localStorage.setItem('loginValue', JSON.stringify(this.loginValue));
     const storedLoginValue = JSON.parse(localStorage.getItem('loginValue') || '{}');
-    console.log(storedLoginValue);
     return (
       loginFormValue.userName === storedLoginValue.userName &&
       loginFormValue.password === storedLoginValue.passWord
