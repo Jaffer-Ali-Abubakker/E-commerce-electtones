@@ -26,7 +26,6 @@ export class AddToCardComponent implements OnInit {
     this.route.paramMap.pipe(switchMap(params => {
       return this.productService.getProductDetailsById(params).pipe(map((product:productList[]) => {
         this.products = product
-        // this.productPrice.set(this.products[0].price);
       }))
     })).subscribe()
    }
