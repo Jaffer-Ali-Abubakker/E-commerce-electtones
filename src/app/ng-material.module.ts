@@ -36,6 +36,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { CommonModule } from '@angular/common';
 import {MatBadgeModule} from '@angular/material/badge';
+import {CdkDrag} from '@angular/cdk/drag-drop';
+
 
 
 
@@ -72,7 +74,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatPaginatorModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    CdkDrag
   ];
   @NgModule({
     imports: [

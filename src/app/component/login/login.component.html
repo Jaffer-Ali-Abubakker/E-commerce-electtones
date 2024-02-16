@@ -1,8 +1,9 @@
 <form [formGroup]="loginForm">
-<div class="login-container">
-    <mat-card class="login-card">
-      <mat-card-header>
-        <mat-card-title>Login</mat-card-title>
+<div class="login-container" >
+    <mat-card class="login-card" cdkDrag>
+      <mat-card-header class="tooltip-container">
+        <mat-card-title class="tooltip">Login</mat-card-title>
+        <span class="text">@</span>
       </mat-card-header>
       <mat-card-content>
           <mat-form-field appearance="fill" class="full-width">
